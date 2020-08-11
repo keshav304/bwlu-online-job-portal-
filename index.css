@@ -27,6 +27,8 @@ header {
   letter-spacing: 1px;
   color: #fff;
   font-weight: 400;
+  /* position relative to its previous postion */
+  
   position: relative;
   z-index: 1;
   text-decoration: none;
@@ -226,9 +228,6 @@ header {
   display: block;
 }
 
-
-
-
 /* section starts */
 
 .banner {
@@ -302,11 +301,35 @@ h3::before {
   margin: 10px 20px;
 }
 
+.col-md-3 {
+  display: inline-block;
+  margin-left: -4px;
+}
+
+.col-md-3 img {
+  width: 100%;
+  height: auto;
+}
+
+body .carousel-indicators li {
+  background-color: red;
+}
+
+body .carousel-control-prev-icon, body .carousel-control-next-icon {
+  background-color: red;
+}
+
+body .no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 /* category wise jobs */
 
 .category ul li {
   list-style: none;
 }
+
 
 .category {
   padding: 30px;
@@ -328,7 +351,7 @@ h5 {
   .categories {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
   }
   .skills {
     width: fit-content;
@@ -345,6 +368,44 @@ h5 {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+/* @media only screen and (max-width:753px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .category {
+    width: fit-content;
+    justify-content: center;
+  }
+} */
+
+.card {
+  border: none;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after {
+  content: '>';
+  font-size: 55px;
+  color: red;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: red;
 }
 
 /* recent jobs */
@@ -413,7 +474,7 @@ h5 {
   cursor: pointer;
 }
 
-.pagelink li:hover, .active {
+.pagelink li:hover, .activa {
   color: #fff;
   background-image: linear-gradient(to right, #6db9ef, #7ce08a);
 }
