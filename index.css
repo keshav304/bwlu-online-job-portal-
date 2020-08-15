@@ -28,7 +28,6 @@ header {
   color: #fff;
   font-weight: 400;
   /* position relative to its previous postion */
-
   position: relative;
   z-index: 1;
   text-decoration: none;
@@ -241,8 +240,14 @@ header {
 .banner h1 {
   padding-top: 170px;
   font-size: 50px;
-  letter-spacing: 6px;
   font-weight: 600;
+  text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.banner p {
+  padding-top: 15px;
+  line-height: 150%;
+  font-size: larger;
   text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -251,25 +256,35 @@ header {
 .search-job {
   padding: 30px 0;
   margin: -50px 6% 50px;
-  background-image: linear-gradient(to right, #6db9ef, #7ce08a);
+  background-image: linear-gradient(to right, #D3D3D3, #57606F);
 }
 
 .search-job .form-control {
   max-width: 250px;
   display: inline-flex;
   margin: 10px 5px;
-  border-radius: 0;
+  height: 50px;
+  border-radius: 25px;
   box-shadow: none !important;
   border: none !important;
+  padding-left: 30px;
 }
 
 .search-job .btn-primary {
-  border-radius: 0;
+  width: 150px;
+  border-radius: 25px;
   box-shadow: none !important;
   border: none;
+  height: 50px;
   display: inline-flex;
   margin: 5px;
   padding: 5px 20px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.search-job .btn-primary:hover {
+  border: 1px solid yellow;
 }
 
 /* top recuruiters */
@@ -330,12 +345,15 @@ body .no-padding {
   list-style: none;
 }
 
-
 .category {
   padding: 30px;
   border-radius: 10px;
   margin: 20px 0;
   box-shadow: 0 2px 40px 0 rgba(110, 130, 208, 0.18);
+}
+
+.jobcategory {
+  width: 20%;
 }
 
 .categories {
@@ -353,24 +371,12 @@ h5 {
     flex-direction: column;
     justify-content: center;
   }
-  .skills {
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .location {
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .experience {
-    width: fit-content;
+  .jobcategory {
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
 }
-
-
 
 /* recent jobs */
 
@@ -391,16 +397,46 @@ h5 {
   border-radius: 5px;
 }
 
+.job-update h4 strong {
+  font-size: 30px;
+  font-family: 'Oswald', sans-serif;
+}
+
 .job-update .fa {
   margin-top: 5px;
   margin-right: 10px;
   color: #77d1b1;
 }
 
+.price {
+  color: #018f62;
+}
+
+.location {
+  color: red;
+}
+
+.description {
+  display: none;
+}
+
+.company-details :hover .description {
+  display: block;
+}
+
 .job-update small {
   background: #efefef;
   padding: 1px 5px;
   margin: 0 5px;
+}
+
+.job-update small:hover {
+  cursor: pointer;
+  background: #23c0e9;
+  z-index: 2;
+  transition: all 200ms ease-in;
+  transform: scale(1.1);
+  color: white;
 }
 
 .job-update p {
@@ -413,9 +449,15 @@ h5 {
   float: right;
 }
 
+.job-update a:hover {
+  text-decoration: none !important;
+  color: rgb(0, 95, 238);
+  float: right;
+}
+
 .apply-btn {
   height: 40px;
-  background-image: linear-gradient(to right, #6db9ef, #7ce08a);
+  background-image: linear-gradient(to right, #6db9ef, #111136);
   padding: 7px;
   border-bottom-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -424,10 +466,17 @@ h5 {
 .apply-btn .btn-primary {
   padding: 0 30px;
   float: right;
-  border-radius: 0;
   box-shadow: none !important;
   background: transparent;
   border: 1px solid #fff;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  background: #f36969;
+  color: #ffffff;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 10px;
 }
 
 .pagelink li {
@@ -468,8 +517,50 @@ h5 {
   box-shadow: 0 2px 40px 0 rgba(110, 130, 208, 0.18);
 }
 
+.stats-box:hover {
+  transition: all 0.2s ease-out;
+  box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+  border: 1px solid #cccccc;
+  background-color: #00838d;
+  transform: scale(1.1);
+}
+
+.stats-box:hover p {
+  transition: all 0.3s ease-out;
+  color: #ffffff;
+}
+
+.stats-box:hover i {
+  transition: all 0.3s ease-out;
+  color: #ffffff;
+}
+
+.stats-box:hover small {
+  transition: all 0.3s ease-out;
+  color: #ffffff;
+}
+
 .stats-box .fa {
   font-size: 30px;
   margin-right: 10px;
   margin-bottom: 10px;
+}
+
+/* footer */
+
+.page-footer {
+  background-color: rgb(37, 28, 28);
+}
+
+.icon_name {
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.icon_name:hover {
+  color: #00FF00;
+}
+
+.dark-grey-text {
+  color: #fff;
 }
