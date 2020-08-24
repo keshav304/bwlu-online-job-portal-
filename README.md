@@ -1,4 +1,5 @@
 # bwlu-online-job-portal-
-Job seeker landing page for online job portal
+Repository containing my contributions in BWLU-ONLINE-JOB-PORTAL
 
-view the page on https://keshav304.github.io/bwlu-online-job-portal-/
+1. Landing page for Job-Seekers
+2. Candidates listing for Recruiters
