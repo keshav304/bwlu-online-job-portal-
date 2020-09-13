@@ -1,4 +1,4 @@
-# bwlu-online-job-portal 💻🚀
+# bwlu-online-job-portal 💻
 Repository containing my contributions in BWLU-ONLINE-JOB-PORTAL
 
 1. Landing page for Job-Seekers
