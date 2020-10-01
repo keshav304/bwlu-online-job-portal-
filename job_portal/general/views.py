@@ -64,21 +64,15 @@ def Seeker(request):
         location = request.POST.get('location')
         email = request.POST.get('email')
         experience = request.POST.get('experience')
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+        new_username = request.POST.get('username')
+        new_password = request.POST.get('password')
         skill = request.POST.get('skill')
         industry = request.POST.get('industry')
-        if password == confirmpassword:
-            if User.objects.filter(username=username).exists:
-                messages.info(request, 'Username Already Taken')
-                return render(request, 'general/seeker.html')
-            elif User.objects.filter(username=username).exists:
-                messages.info(request, 'Email Already Taken')
-                return render(request, 'general/seeker.html')
-            else:
-                new_seeker = User.objects.create_user(username=username,email=email,password=password, first_name=name)
+        confirmpassword = request.POST.get('confirmpassword')
+        if new_password == confirmpassword:
+                new_seeker = User.objects.create_user(username=new_username,email=email,password=new_password, first_name=name)
                 new_seeker.save()
-                Seeker = seeker(name=name, location=location,usernname=username,email=email, experience=experience, password=password, key_skill=skill,
+                Seeker = seeker(name=name, location=location,usernname=new_username,email=email, experience=experience, password=new_password, key_skill=skill,
                         preferred_industry=industry)
                 Seeker.save()
                 response = redirect('/home-seeker/')
@@ -86,7 +80,7 @@ def Seeker(request):
         else:
             messages.info(request, 'Passwords did not match')
             return render(request, 'general/seeker.html')
-    print(User.objects.all().values_list('username'))        
+     
     return render(request, 'general/seeker.html')
 
 
@@ -103,11 +97,6 @@ def Recruiter(request):
         password = request.POST.get('password')
         confirmpassword = request.POST.get('confirmpassword')
         if password == confirmpassword:
-            if User.objects.filter(username=username).exists:
-                return render(request, 'general/seeker.html')
-            elif User.objects.filter(username=username).exists:
-                return render(request, 'general/seeker.html')
-            else:
                 new_recruiter = User.objects.create_user(username=username,email=email,password=password, first_name=name)
                 new_recruiter.save()
                 Recruiter = recruiter(company_name=name, location=location,
@@ -117,7 +106,7 @@ def Recruiter(request):
                 response = redirect('/home-recruiter/')
                 return response
         else:
-                    messages.info(request, 'Passwords did not match')
-                    return render(request, 'general/recruiter.html')
+            messages.info(request, 'Passwords did not match')
+            return render(request, 'general/recruiter.html')
     return render(request, 'general/recruiter.html')
 

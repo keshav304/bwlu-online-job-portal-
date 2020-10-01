@@ -127,9 +127,9 @@
     <!-- End -->
 
     <!-- Error messages -->
-    <div class="alert alert-warning" role="alert">
+    <div>
       {% for message in messages %}
-      <h5>{{message}}</h5>
+      <h5 class="text-center" style="color: red;">* {{message}}</h5>
       {% endfor %}
     </div>
 
@@ -286,10 +286,6 @@
                   and privacy policy</p></strong
                 ><br>
                 <strong class="text-center">
-                <strong class="text-center">
-                  <p>* If you are redirected to same page than maybe your username or email is already registered or you password didn't matched</p></strong
-                >
-                <center>
                   <button class="btn btn-primary col-6">Create Account</button>
                 </center>
               </form>
