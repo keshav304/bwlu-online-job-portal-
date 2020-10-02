@@ -13,7 +13,7 @@ def about(request):
     return render(request, 'general/about.html')
 
 def team(request):
-    return HttpResponse("our team")
+    return render(request, 'general/team.html')
 
 def terms(request):
     return HttpResponse("terms of use")
